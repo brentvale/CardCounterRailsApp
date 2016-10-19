@@ -1,6 +1,7 @@
 var React = require('react');
 
 var StartStopButtons = React.createClass({
+  
   render: function(){
     return (
       <div className="col-xs-12 section-block">
@@ -11,7 +12,10 @@ var StartStopButtons = React.createClass({
             </button>
           </div>
           <div className="btn-group button-card-controls">
-            <button type="button" className="btn btn-success" style={{float: "right"}}>
+            <button type="button" 
+                    className="btn btn-success" 
+                    style={{float: "right"}}
+                    onClick={this.props.toggleStarted}>
               Start
             </button>
           </div>

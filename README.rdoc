@@ -1,22 +1,3 @@
-== README
+== Card Counting App
 
-This is a template to get started using an application with Rails, Reactjs, the Flux pattern, and a postgres database.
-
-Specifics include:
-
-* Removed TurboLinks
-* Root Route to StaticPages#home
-* Folder structure for using the flux pattern
-* Uses react-router for frontend routing
-* package.json file with node packages to get you started
-* webpack.configs for development and production
-* Debugging gems as well as rspec (see rspec documentation for getting started), commented out gems: devise, devise-invitable, paperclip aws-sdk, and sendgrid
-
-
-To get going:
-1. clone repo
-2. run `bundle install`
-3. run `npm install`
-4. run `rake db:create`
-4. run `rails s`
-5. run `node_modules/.bin/webpack --watch` or `webpack --watch` depending on your setup
+Learn to count cards by mastering the necessary steps in an order that's worked for thousands of card counters.
