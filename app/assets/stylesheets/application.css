@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+.button-card-controls{
+  width: 50%;
+}
+.box-with-shadow{
+  background: #f9f9f9;
+  box-shadow: 0 1px 4px rgba(0,0,0,.24);
+  border-radius: 3px;
+  padding:15px;
+}
+.box-with-shadow:hover{
+  box-shadow: 0 3px 10px rgba(0,0,0,.23);
+}
+.btn.button-fill span{
+  font-size: 2.5em;
+}
+.button-fill{
+  height:100%;
+  width:100%;
+}
+.center-block{
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+}
+.one-third-button{
+  height:100px;
+  width:33%;
+  padding:10px;
+}
+.section-block{
+  margin:15px 0px 15px 0px;
+}
+.vertical-text {
+  float:left;
+  position:absolute;
+  top: 90px;
+  left: 50px;
+	transform: rotate(90deg);
+	transform-origin: left top;
+}
