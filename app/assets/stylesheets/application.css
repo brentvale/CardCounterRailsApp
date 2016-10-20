@@ -15,7 +15,7 @@
  */
 
 .button-card-controls{
-  width: 50%;
+  width: 30%;
 }
 .box-with-shadow{
   background: #f9f9f9;
@@ -27,11 +27,20 @@
   box-shadow: 0 3px 10px rgba(0,0,0,.23);
 }
 .btn.button-fill span{
+  color: white;
   font-size: 2.5em;
 }
+span.running-count{
+  font-size: 2em;
+}
 .button-fill{
+  background-color: #898989;
+  color:white;
+  font-size:2em;
   height:100%;
   width:100%;
+  /* event is on button-fill, prevents inner span from being clicked*/
+  z-index:10;
 }
 .center-block{
   left:0;
@@ -41,8 +50,9 @@
 }
 .one-third-button{
   height:100px;
-  width:33%;
+  max-width:200px;
   padding:10px;
+  width:33%;
 }
 .section-block{
   margin:15px 0px 15px 0px;

@@ -5,7 +5,7 @@ var ErrorDisplay = React.createClass({
     return(
       <div className="col-xs-12 section-block">
         <div className="box-with-shadow center-block" style={{width: "90%"}}>
-           Show errors here.
+          {this.props.description}
         </div>
       </div>
     )
