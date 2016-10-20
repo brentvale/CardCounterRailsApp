@@ -52721,16 +52721,19 @@
 
 	var React = __webpack_require__(1);
 	
+	var AllInvisibleCards = __webpack_require__(517).AllInvisibleCards;
+	
 	var CardShow = React.createClass({
-	  displayName: "CardShow",
+	  displayName: 'CardShow',
 	
 	  render: function () {
 	    var imageSrc = "assets/" + this.props.card.imageSrc;
 	
 	    return React.createElement(
-	      "div",
-	      { className: "col-xs-12" },
-	      React.createElement("img", { className: "center-block", src: imageSrc })
+	      'div',
+	      { className: 'col-xs-12' },
+	      React.createElement('img', { className: 'center-block', src: imageSrc }),
+	      React.createElement(AllInvisibleCards, null)
 	    );
 	  }
 	});
@@ -52966,6 +52969,80 @@
 	
 	module.exports = {
 	  RunningCountDisplay: RunningCountDisplay
+	};
+
+/***/ },
+/* 516 */,
+/* 517 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var AllInvisibleCards = React.createClass({
+	  displayName: "AllInvisibleCards",
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "col-xs-12", style: { display: "none" } },
+	      React.createElement("img", { src: "assets/2_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/2_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/2_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/2_of_spades.svg" }),
+	      React.createElement("img", { src: "assets/3_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/3_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/3_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/3_of_spades.svg" }),
+	      React.createElement("img", { src: "assets/4_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/4_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/4_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/4_of_spades.svg" }),
+	      React.createElement("img", { src: "assets/5_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/5_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/5_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/5_of_spades.svg" }),
+	      React.createElement("img", { src: "assets/6_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/6_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/6_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/6_of_spades.svg" }),
+	      React.createElement("img", { src: "assets/7_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/7_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/7_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/7_of_spades.svg" }),
+	      React.createElement("img", { src: "assets/8_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/8_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/8_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/8_of_spades.svg" }),
+	      React.createElement("img", { src: "assets/9_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/9_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/9_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/9_of_spades.svg" }),
+	      React.createElement("img", { src: "assets/10_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/10_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/10_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/10_of_spades.svg" }),
+	      React.createElement("img", { src: "assets/ace_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/ace_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/ace_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/ace_of_spades.svg" }),
+	      React.createElement("img", { src: "assets/jack_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/jack_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/jack_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/jack_of_spades.svg" }),
+	      React.createElement("img", { src: "assets/queen_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/queen_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/queen_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/queen_of_spades.svg" }),
+	      React.createElement("img", { src: "assets/king_of_clubs.svg" }),
+	      React.createElement("img", { src: "assets/king_of_diamonds.svg" }),
+	      React.createElement("img", { src: "assets/king_of_hearts.svg" }),
+	      React.createElement("img", { src: "assets/king_of_spades.svg" })
+	    );
+	  }
+	});
+	
+	module.exports = {
+	  AllInvisibleCards: AllInvisibleCards
 	};
 
 /***/ }
