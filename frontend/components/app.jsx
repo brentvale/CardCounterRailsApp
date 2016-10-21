@@ -95,6 +95,7 @@ var App = React.createClass({
         
         <CardCountButtons card={currentCard} 
                           started={this.state.started}
+                          runningCount={this.state.runningCount}
                           handleCorrectCount={this.handleCorrectCount}
                           handleIncorrectCount={this.handleIncorrectCount}/>
         <ErrorDisplay description={this.state.incorrectDescription}/>

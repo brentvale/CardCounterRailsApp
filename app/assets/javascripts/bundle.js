@@ -27093,11 +27093,11 @@
 	
 	var CustomNav = __webpack_require__(258).CustomNav;
 	var CardShow = __webpack_require__(509).CardShow;
-	var CardCountButtons = __webpack_require__(510).CardCountButtons;
-	var CardDescription = __webpack_require__(511).CardDescription;
-	var ErrorDisplay = __webpack_require__(512).ErrorDisplay;
-	var StartStopButtons = __webpack_require__(513).StartStopButtons;
-	var SpeedBar = __webpack_require__(514).SpeedBar;
+	var CardCountButtons = __webpack_require__(511).CardCountButtons;
+	var CardDescription = __webpack_require__(512).CardDescription;
+	var ErrorDisplay = __webpack_require__(513).ErrorDisplay;
+	var StartStopButtons = __webpack_require__(514).StartStopButtons;
+	var SpeedBar = __webpack_require__(516).SpeedBar;
 	
 	var App = React.createClass({
 	  displayName: 'App',
@@ -27184,6 +27184,7 @@
 	        startTime: this.startTime }),
 	      React.createElement(CardCountButtons, { card: currentCard,
 	        started: this.state.started,
+	        runningCount: this.state.runningCount,
 	        handleCorrectCount: this.handleCorrectCount,
 	        handleIncorrectCount: this.handleIncorrectCount }),
 	      React.createElement(ErrorDisplay, { description: this.state.incorrectDescription }),
@@ -52721,7 +52722,7 @@
 
 	var React = __webpack_require__(1);
 	
-	var AllInvisibleCards = __webpack_require__(517).AllInvisibleCards;
+	var AllInvisibleCards = __webpack_require__(510).AllInvisibleCards;
 	
 	var CardShow = React.createClass({
 	  displayName: 'CardShow',
@@ -52744,236 +52745,6 @@
 
 /***/ },
 /* 510 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var CardCountButtons = React.createClass({
-	  displayName: "CardCountButtons",
-	
-	  checkValue: function (event) {
-	    //if user has not started, alert must click
-	    if (this.props.started) {
-	      //if tapped button == cards value
-	      var enteredValue = parseInt($(event.target).html());
-	
-	      if (this.props.card.countValue === enteredValue) {
-	        this.props.handleCorrectCount(this.props.card.countValue);
-	      } else {
-	        this.props.handleIncorrectCount(this.props.card.countValue, enteredValue);
-	      }
-	    } else {
-	      alert("Click start to begin");
-	    }
-	  },
-	  render: function () {
-	    return React.createElement(
-	      "div",
-	      { className: "col-xs-12" },
-	      React.createElement(
-	        "div",
-	        { className: "center-block", style: { textAlign: "center" } },
-	        React.createElement(
-	          "div",
-	          { className: "btn-group one-third-button" },
-	          React.createElement(
-	            "button",
-	            { type: "button", className: "btn button-fill",
-	              onClick: this.checkValue,
-	              style: { zIndex: "100" } },
-	            "1"
-	          )
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "btn-group one-third-button" },
-	          React.createElement(
-	            "button",
-	            { type: "button", className: "btn button-fill",
-	              onClick: this.checkValue,
-	              style: { zIndex: "100" } },
-	            "0"
-	          )
-	        ),
-	        React.createElement(
-	          "div",
-	          { className: "btn-group one-third-button" },
-	          React.createElement(
-	            "button",
-	            { type: "button", className: "btn button-fill",
-	              onClick: this.checkValue,
-	              style: { zIndex: "100" } },
-	            "-1"
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
-	
-	module.exports = {
-	  CardCountButtons: CardCountButtons
-	};
-
-/***/ },
-/* 511 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var CardDescription = React.createClass({
-	  displayName: "CardDescription",
-	
-	  render: function () {
-	    return React.createElement(
-	      "div",
-	      { className: "col-xs-12 section-block" },
-	      React.createElement(
-	        "div",
-	        { className: "box-with-shadow center-block", style: { width: "90%" } },
-	        "Description of card and [+1][0][-1]"
-	      )
-	    );
-	  }
-	});
-	
-	module.exports = {
-	  CardDescription: CardDescription
-	};
-
-/***/ },
-/* 512 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var ErrorDisplay = React.createClass({
-	  displayName: "ErrorDisplay",
-	
-	  render: function () {
-	    return React.createElement(
-	      "div",
-	      { className: "col-xs-12 section-block" },
-	      React.createElement(
-	        "div",
-	        { className: "box-with-shadow center-block", style: { width: "90%" } },
-	        this.props.description
-	      )
-	    );
-	  }
-	});
-	
-	module.exports = {
-	  ErrorDisplay: ErrorDisplay
-	};
-
-/***/ },
-/* 513 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var RunningCountDisplay = __webpack_require__(515).RunningCountDisplay;
-	
-	var StartStopButtons = React.createClass({
-	  displayName: 'StartStopButtons',
-	
-	  handleClickStart: function () {
-	    if (!this.props.started) {
-	      this.props.startTime();
-	    }
-	    this.props.toggleStarted();
-	  },
-	  render: function () {
-	    var startStopButtonText = this.props.started ? "Stop" : "Start";
-	    return React.createElement(
-	      'div',
-	      { className: 'col-xs-12 section-block' },
-	      React.createElement(
-	        'div',
-	        { className: 'center-block', style: { width: "80%", textAlign: "center" } },
-	        React.createElement(
-	          'div',
-	          { className: 'btn-group button-card-controls', style: { float: "left" } },
-	          React.createElement(
-	            'button',
-	            { type: 'button', className: 'btn btn-danger' },
-	            'Reset'
-	          )
-	        ),
-	        React.createElement(RunningCountDisplay, { runningCount: this.props.runningCount }),
-	        React.createElement(
-	          'div',
-	          { className: 'btn-group button-card-controls', style: { float: "right" } },
-	          React.createElement(
-	            'button',
-	            { type: 'button',
-	              className: 'btn btn-success',
-	              style: { float: "right" },
-	              onClick: this.handleClickStart },
-	            startStopButtonText
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
-	
-	module.exports = {
-	  StartStopButtons: StartStopButtons
-	};
-
-/***/ },
-/* 514 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var SpeedBar = React.createClass({
-	  displayName: "SpeedBar",
-	
-	  render: function () {
-	    return React.createElement(
-	      "div",
-	      { className: "box-with-shadow vertical-text", style: { width: "300px" } },
-	      "Select Speed"
-	    );
-	  }
-	});
-	
-	module.exports = {
-	  SpeedBar: SpeedBar
-	};
-
-/***/ },
-/* 515 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var React = __webpack_require__(1);
-	
-	var RunningCountDisplay = React.createClass({
-	  displayName: "RunningCountDisplay",
-	
-	  render: function () {
-	    return React.createElement(
-	      "div",
-	      { className: "box-with-shadow", style: { width: "20%", maxWidth: "150px", display: "inline-block" } },
-	      React.createElement(
-	        "span",
-	        { className: "running-count" },
-	        this.props.runningCount
-	      )
-	    );
-	  }
-	});
-	
-	module.exports = {
-	  RunningCountDisplay: RunningCountDisplay
-	};
-
-/***/ },
-/* 516 */,
-/* 517 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
@@ -53043,6 +52814,252 @@
 	
 	module.exports = {
 	  AllInvisibleCards: AllInvisibleCards
+	};
+
+/***/ },
+/* 511 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var CardCountButtons = React.createClass({
+	  displayName: "CardCountButtons",
+	
+	  checkValue: function (event) {
+	    //if user has not started, alert must click
+	    if (this.props.started) {
+	      //if tapped button == cards value
+	      var enteredValue;
+	      switch (event.target.id) {
+	        case "plusOne":
+	          enteredValue = 1;
+	          break;
+	        case "neutral":
+	          enteredValue = 0;
+	          break;
+	        case "minusOne":
+	          enteredValue = -1;
+	          break;
+	      }
+	
+	      if (this.props.card.countValue === enteredValue) {
+	        this.props.handleCorrectCount(this.props.card.countValue);
+	      } else {
+	        this.props.handleIncorrectCount(this.props.card.countValue, enteredValue);
+	      }
+	    } else {
+	      alert("Click start to begin");
+	    }
+	  },
+	  render: function () {
+	    var plusOne = this.props.runningCount + 1;
+	    var minusOne = this.props.runningCount - 1;
+	
+	    return React.createElement(
+	      "div",
+	      { className: "col-xs-12" },
+	      React.createElement(
+	        "div",
+	        { className: "center-block", style: { textAlign: "center" } },
+	        React.createElement(
+	          "div",
+	          { className: "btn-group one-third-button" },
+	          React.createElement(
+	            "button",
+	            { type: "button", id: "plusOne",
+	              className: "btn button-fill",
+	              onClick: this.checkValue,
+	              style: { zIndex: "100" } },
+	            plusOne
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "btn-group one-third-button" },
+	          React.createElement(
+	            "button",
+	            { type: "button", id: "neutral",
+	              className: "btn button-fill",
+	              onClick: this.checkValue,
+	              style: { zIndex: "100" } },
+	            this.props.runningCount
+	          )
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "btn-group one-third-button" },
+	          React.createElement(
+	            "button",
+	            { type: "button", id: "minusOne",
+	              className: "btn button-fill",
+	              onClick: this.checkValue,
+	              style: { zIndex: "100" } },
+	            minusOne
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = {
+	  CardCountButtons: CardCountButtons
+	};
+
+/***/ },
+/* 512 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var CardDescription = React.createClass({
+	  displayName: "CardDescription",
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "col-xs-12 section-block" },
+	      React.createElement(
+	        "div",
+	        { className: "box-with-shadow center-block", style: { width: "90%" } },
+	        "Description of card and [+1][0][-1]"
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = {
+	  CardDescription: CardDescription
+	};
+
+/***/ },
+/* 513 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var ErrorDisplay = React.createClass({
+	  displayName: "ErrorDisplay",
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "col-xs-12 section-block" },
+	      React.createElement(
+	        "div",
+	        { className: "box-with-shadow center-block", style: { width: "90%" } },
+	        this.props.description
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = {
+	  ErrorDisplay: ErrorDisplay
+	};
+
+/***/ },
+/* 514 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var RunningCountDisplay = __webpack_require__(515).RunningCountDisplay;
+	
+	var StartStopButtons = React.createClass({
+	  displayName: 'StartStopButtons',
+	
+	  handleClickStart: function () {
+	    if (!this.props.started) {
+	      this.props.startTime();
+	    }
+	    this.props.toggleStarted();
+	  },
+	  render: function () {
+	    var startStopButtonText = this.props.started ? "Stop" : "Start";
+	    return React.createElement(
+	      'div',
+	      { className: 'col-xs-12 section-block' },
+	      React.createElement(
+	        'div',
+	        { className: 'center-block', style: { width: "80%", textAlign: "center" } },
+	        React.createElement(
+	          'div',
+	          { className: 'btn-group button-card-controls', style: { float: "left" } },
+	          React.createElement(
+	            'button',
+	            { type: 'button', className: 'btn btn-danger' },
+	            'Reset'
+	          )
+	        ),
+	        React.createElement(RunningCountDisplay, { runningCount: this.props.runningCount }),
+	        React.createElement(
+	          'div',
+	          { className: 'btn-group button-card-controls', style: { float: "right" } },
+	          React.createElement(
+	            'button',
+	            { type: 'button',
+	              className: 'btn btn-success',
+	              style: { float: "right" },
+	              onClick: this.handleClickStart },
+	            startStopButtonText
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = {
+	  StartStopButtons: StartStopButtons
+	};
+
+/***/ },
+/* 515 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var RunningCountDisplay = React.createClass({
+	  displayName: "RunningCountDisplay",
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "box-with-shadow", style: { width: "20%", maxWidth: "150px", display: "inline-block" } },
+	      React.createElement(
+	        "span",
+	        { className: "running-count" },
+	        this.props.runningCount
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = {
+	  RunningCountDisplay: RunningCountDisplay
+	};
+
+/***/ },
+/* 516 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var SpeedBar = React.createClass({
+	  displayName: "SpeedBar",
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "box-with-shadow vertical-text", style: { width: "300px" } },
+	      "Select Speed"
+	    );
+	  }
+	});
+	
+	module.exports = {
+	  SpeedBar: SpeedBar
 	};
 
 /***/ }
